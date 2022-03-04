@@ -10,6 +10,7 @@ header{
     display:flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 #logo{
@@ -27,7 +28,7 @@ header{
 .nav_links{
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items: flex-start;
 }
 
 .nav_links a:visited{
@@ -42,6 +43,8 @@ h4{
     display:inline-flex;
     flex-wrap:wrap;
     justify-content: center;
+    /* need to align content */
+    align-content: center;
 }
 
 .card{
@@ -73,6 +76,11 @@ h4{
 
 @media only screen and (min-width: 900px) {
 
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
     body > header{
         display:flex;
         flex-wrap:nowrap;
@@ -83,7 +91,8 @@ h4{
         z-index: 5;
     }
 
-    .nav_links{flex-direction: row;
+    .nav_links{
+        flex-direction: row;
         justify-content: flex-end;
     }
     #logo{
@@ -121,6 +130,8 @@ h4{
 
     body{
         background-color: #f1f1f1;
+        background-image: none;
+        /* also set to none */
     }
 
     .pricing{
@@ -129,6 +140,13 @@ h4{
         flex-direction:row;
         align-items:flex-end;
     }
+
+    .gallery, #gallery{
+        visibility: hidden;
+        display:none;
+        /* have to set to none in order for it to work */
+    }
+
     .card{
         border: solid 2px #45ADDD;
         flex-basis:325px;
@@ -137,15 +155,9 @@ h4{
     .card h3{
         justify-self: center;
     } 
-
-    .gallery, #gallery{
-        visibility: hidden;
-        display:none;
-        /* have to set to none in order for it to work */
-    }
-
-    .card li:nth-of-type(2)::after{
-    }
+    .card li:nth-child(2)::after {
+        content: "\1F44D";
+      }
 } 
 
 @media screen and (prefers-reduced-motion: reduce){
