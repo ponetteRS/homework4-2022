@@ -15,12 +15,12 @@ header{
 
 #logo{
     max-width: 400px;
-    animation-duration: 5s;
-    animation-name: zoomie;
-    animation-iteration-count: 1;
+    animation-duration: 10s;
+    animation-name: custom;
+    animation-iteration-count: 3;
 
 }
- @keyframes zoomie{
+ @keyframes custom{
     0% {opacity:0; width:25px;}
     100% {opacity:1; width: 475px;}
  }
