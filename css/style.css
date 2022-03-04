@@ -15,7 +15,7 @@ header{
 
 #logo{
     max-width: 400px;
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-name: custom;
     animation-iteration-count: 3;
 
