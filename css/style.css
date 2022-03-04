@@ -1,0 +1,156 @@
+body{
+    font-family: 'Poppins', serif;
+    background-color: #f1f1f1; 
+    /* backup color comes in bc nesting */
+    background-image: url('../images/concrete_seamless.png');
+    /* 720px ???? does instructions want it at this size (leave out for now) */
+}
+
+header{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logo{
+    max-width: 400px;
+    animation-duration: 5s;
+    animation-name: zoomie;
+    animation-iteration-count: 1;
+
+}
+ @keyframes zoomie{
+    0% {opacity:0; width:25px;}
+    100% {opacity:1; width: 475px;}
+ }
+
+.nav_links{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.nav_links a:visited{
+    color: blue;
+}
+
+h4{
+    align-self: center;
+}
+
+.pricing{
+    display:inline-flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    flex-basis:450px;
+}
+
+.card > header:first-child{
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.gallery{
+    display:inline-flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: center;
+}
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+    
+}
+
+@media only screen and (min-width: 900px) {
+
+    body > header{
+        display:flex;
+        flex-wrap:nowrap;
+        flex-direction: row; 
+        justify-content:space-between;
+        position: sticky; 
+        top:0;
+        z-index: 5;
+    }
+
+    .nav_links{flex-direction: row;
+        justify-content: flex-end;
+    }
+    #logo{
+        justify-self: flex-start;
+    }
+    .pricing{
+        display:inline-flex;
+        flex-direction:row;
+        align-items:center;
+    }
+    .card{
+        flex-basis: 250px;
+    }
+
+    .card h3{
+        align-self: flex-start;
+    } 
+}
+
+@media print {
+    body > header{
+        display:flex;
+        align-items: center;
+        flex-direction: column;} 
+
+    nav{
+        width:100%;
+    }
+
+    .nav_links{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+    }
+
+    body{
+        background-color: #f1f1f1;
+    }
+
+    .pricing{
+        display:flex;
+        flex-wrap: nowrap;
+        flex-direction:row;
+        align-items:flex-end;
+    }
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis:325px;
+        }
+
+    .card h3{
+        justify-self: center;
+    } 
+
+    .gallery, #gallery{
+        visibility: hidden;
+        display:none;
+        /* have to set to none in order for it to work */
+    }
+
+    .card li:nth-of-type(2)::after{
+    }
+} 
+
+@media screen and (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+        /* have to set animation to none */
+    }
+}
